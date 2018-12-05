@@ -1,23 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="riv-yf-vaL">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Original Snake-->
+        <scene sceneID="nIN-t9-Bhd">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="01g-AN-BaK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="79m-N0-hAt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dgl-ZB-7dE">
+                                <rect key="frame" x="10" y="284.5" width="355" height="98"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7m-6H-Yt3">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="nRy-q4-qgP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="23"/>
+                                        <state key="normal" title="Start Game"/>
+                                        <connections>
+                                            <segue destination="qXP-LF-Ye9" kind="presentation" modalTransitionStyle="crossDissolve" id="uv5-n6-zh0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQF-cR-Tsv">
+                                        <rect key="frame" x="0.0" y="54" width="355" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Ugz-Zg-nwL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="23"/>
+                                        <state key="normal" title="Settings"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="GQF-cR-Tsv" firstAttribute="height" secondItem="C7m-6H-Yt3" secondAttribute="height" id="Snu-iQ-Pfu"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Dgl-ZB-7dE" firstAttribute="width" secondItem="79m-N0-hAt" secondAttribute="width" constant="-20" id="6nL-yd-ubo"/>
+                            <constraint firstItem="Dgl-ZB-7dE" firstAttribute="centerY" secondItem="79m-N0-hAt" secondAttribute="centerY" id="Ahn-e6-KdH"/>
+                            <constraint firstItem="Dgl-ZB-7dE" firstAttribute="centerX" secondItem="79m-N0-hAt" secondAttribute="centerX" id="fu4-Oc-NHB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wbd-eK-OE5"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Original Snake" id="Lfy-vt-lH3"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iRo-ft-93N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1436" y="27"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="V46-nr-kVF">
+            <objects>
+                <viewController id="qXP-LF-Ye9" customClass="GameViewController" customModule="Original_Snake" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FQN-4S-7jL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dxf-G1-iSQ">
+                                <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="6bv-KB-FrE"/>
+                                    <constraint firstAttribute="width" secondItem="Dxf-G1-iSQ" secondAttribute="height" id="mfC-We-qsb"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pw0-tQ-FfB">
+                                <rect key="frame" x="8" y="20" width="47" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Pa5-h5-eYe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="20"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonClicked:" destination="qXP-LF-Ye9" eventType="touchUpInside" id="yPq-iL-uFy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Dxf-G1-iSQ" firstAttribute="centerX" secondItem="FQN-4S-7jL" secondAttribute="centerX" id="6T1-I2-9oT"/>
+                            <constraint firstItem="Dxf-G1-iSQ" firstAttribute="centerY" secondItem="FQN-4S-7jL" secondAttribute="centerY" id="LM2-Cj-gMU"/>
+                            <constraint firstItem="Pw0-tQ-FfB" firstAttribute="leading" secondItem="n1T-12-uXy" secondAttribute="leading" constant="8" id="ktf-fU-5Wj"/>
+                            <constraint firstItem="Pw0-tQ-FfB" firstAttribute="top" secondItem="n1T-12-uXy" secondAttribute="top" id="y9V-MY-hSg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="n1T-12-uXy"/>
+                    </view>
+                    <connections>
+                        <outlet property="gameAreaSizeConstraint" destination="6bv-KB-FrE" id="xAZ-AB-YoG"/>
+                        <outlet property="gameAreaView" destination="Dxf-G1-iSQ" id="qDA-Ts-TOl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XyX-uZ-UAm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2239" y="27"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ud2-Hf-dCp">
+            <objects>
+                <navigationController id="riv-yf-vaL" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Cvu-xX-nYF">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="01g-AN-BaK" kind="relationship" relationship="rootViewController" id="XNJ-QP-83X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="veG-g2-jdf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
