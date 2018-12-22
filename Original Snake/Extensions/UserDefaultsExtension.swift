@@ -19,7 +19,8 @@ extension UserDefaults {
             return []
         }
         set {
-            set(try? PropertyListEncoder().encode(newValue), forKey: UserDefaults.kScores)
+            let sortedNewValue = newValue.sorted()
+            set(try? PropertyListEncoder().encode(sortedNewValue), forKey: UserDefaults.kScores)
         }
     }
     

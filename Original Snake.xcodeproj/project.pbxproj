@@ -12,6 +12,8 @@
 		8A98B56921CEA05500BB7CBF /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98B56821CEA05500BB7CBF /* Score.swift */; };
 		8A98B56B21CEC45C00BB7CBF /* SnakeObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98B56A21CEC45C00BB7CBF /* SnakeObjectView.swift */; };
 		8A98B56D21CEC47A00BB7CBF /* FoodObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98B56C21CEC47A00BB7CBF /* FoodObjectView.swift */; };
+		8A98B56F21CECABD00BB7CBF /* HighScoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98B56E21CECABD00BB7CBF /* HighScoresTableViewController.swift */; };
+		8A98B57321CECB6A00BB7CBF /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98B57221CECB6A00BB7CBF /* ScoreTableViewCell.swift */; };
 		8AFC7EF321B6E5FB00F09BF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFC7EF221B6E5FB00F09BF4 /* AppDelegate.swift */; };
 		8AFC7EF821B6E5FB00F09BF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AFC7EF621B6E5FB00F09BF4 /* Main.storyboard */; };
 		8AFC7EFA21B6E60000F09BF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AFC7EF921B6E60000F09BF4 /* Assets.xcassets */; };
@@ -32,6 +34,8 @@
 		8A98B56821CEA05500BB7CBF /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		8A98B56A21CEC45C00BB7CBF /* SnakeObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeObjectView.swift; sourceTree = "<group>"; };
 		8A98B56C21CEC47A00BB7CBF /* FoodObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodObjectView.swift; sourceTree = "<group>"; };
+		8A98B56E21CECABD00BB7CBF /* HighScoresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoresTableViewController.swift; sourceTree = "<group>"; };
+		8A98B57221CECB6A00BB7CBF /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
 		8AFC7EEF21B6E5FB00F09BF4 /* Original Snake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Original Snake.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AFC7EF221B6E5FB00F09BF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AFC7EF721B6E5FB00F09BF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -106,6 +110,24 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		8A98B57021CECAC400BB7CBF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8AFC7F0421B6E9F000F09BF4 /* GameViewController.swift */,
+				8A98B56E21CECABD00BB7CBF /* HighScoresTableViewController.swift */,
+				8A98B57121CECB4E00BB7CBF /* Cells */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		8A98B57121CECB4E00BB7CBF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8A98B57221CECB6A00BB7CBF /* ScoreTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		8AFC7EE621B6E5FB00F09BF4 = {
 			isa = PBXGroup;
 			children = (
@@ -131,7 +153,7 @@
 				8A98B56321CE8A8A00BB7CBF /* Structures */,
 				8A98B56421CE8A9100BB7CBF /* Utilities */,
 				8AFC7EF221B6E5FB00F09BF4 /* AppDelegate.swift */,
-				8AFC7F0421B6E9F000F09BF4 /* GameViewController.swift */,
+				8A98B57021CECAC400BB7CBF /* View Controllers */,
 				8AFC7EF621B6E5FB00F09BF4 /* Main.storyboard */,
 				8AFC7EF921B6E60000F09BF4 /* Assets.xcassets */,
 				8AFC7EFB21B6E60000F09BF4 /* LaunchScreen.storyboard */,
@@ -211,7 +233,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A98B56F21CECABD00BB7CBF /* HighScoresTableViewController.swift in Sources */,
 				8AFC7F0521B6E9F000F09BF4 /* GameViewController.swift in Sources */,
+				8A98B57321CECB6A00BB7CBF /* ScoreTableViewCell.swift in Sources */,
 				8A98B56D21CEC47A00BB7CBF /* FoodObjectView.swift in Sources */,
 				8AFC7F0D21B6FB9300F09BF4 /* Queue.swift in Sources */,
 				8AFC7F0721B6ED6300F09BF4 /* ObjectView.swift in Sources */,

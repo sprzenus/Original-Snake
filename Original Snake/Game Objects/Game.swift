@@ -45,6 +45,9 @@ class Game {
     func stop() {
         isStopped = true
         timer.invalidate()
+        if score != 0 {
+            UserDefaults.standard.scores.append(Score(timestamp: Int64(Date().timeIntervalSince1970), points: score))
+        }
     }
     
     public func checkCollision(_ newHead: Point) {

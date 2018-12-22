@@ -29,7 +29,7 @@ struct Score: Comparable, Equatable, Codable {
     }
     
     static func < (lhs: Score, rhs: Score) -> Bool {
-        return lhs.points < rhs.points
+        return lhs.points > rhs.points
     }
     
     static func == (lhs: Score, rhs: Score) -> Bool {
