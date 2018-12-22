@@ -40,33 +40,27 @@ class GameViewController: UIViewController {
         } else if game.isStopped {
             startNewGame()
         } else {
-            let touchPoint = touch.location(in: view)
-//            let factor = view.frame.width / view.frame.height
-//            let first = touchPoint.x - touchPoint.y * factor // \
-//            let second = touchPoint.x - (view.frame.height - touchPoint.y) * factor // /
-            
-            if game.snake.moveDirection == .left || game.snake.moveDirection == .right {
-                if touchPoint.y < view.frame.height / 2 {
-                    game.snake.moveDirection = .up
-                } else {
-                    game.snake.moveDirection = .down
-                }
-            } else {
-                if touchPoint.x < view.frame.width / 2 {
-                    game.snake.moveDirection = .left
-                } else {
-                    game.snake.moveDirection = .right
-                }
-            }
-//            if game.snake.moveDirection != .right && first < 0 && second < 0 {
-//                game.snake.moveDirection = .left
-//            } else if game.snake.moveDirection != .down && first > 0 && second < 0 {
-//                game.snake.moveDirection = .up
-//            } else if game.snake.moveDirection != .left && first > 0 && second > 0 {
-//                game.snake.moveDirection = .right
-//            } else if game.snake.moveDirection != .up && first < 0 && second > 0 {
-//                game.snake.moveDirection = .down
-//            }
+            let touchLocation = touch.location(in: view)
+            let directionToMove = getDirectionToMove(touchLocation)
+            game.snake.moveDirection = directionToMove
+        }
+    }
+    
+    private func getDirectionToMove(_ touchLocation: CGPoint) -> Snake.Direction {
+        let factor = view.frame.width / view.frame.height / 2
+        let touchY = touchLocation.y - view.bounds.height
+        let touchX = touchLocation.x
+        let first = touchX - touchY * factor // \
+        let second = touchX - (view.frame.height - touchY) * factor // /
+        
+        if first < 0 && second < 0 {
+            return .left
+        } else if first > 0 && second < 0 {
+            return .up
+        } else if first > 0 && second > 0 {
+            return .right
+        } else {
+            return .down
         }
     }
     
@@ -112,5 +106,9 @@ class GameViewController: UIViewController {
         refresh()
     }
     
-    
+    private func getLocationByPoint(_ point: Point) -> CGPoint {
+        let pointInArea = CGPoint(x: CGFloat(point.x) * Constants.scale, y: CGFloat(point.y) * Constants.scale)
+        let pointOnScreen = view.convert(pointInArea, from: gameAreaView)
+        return pointOnScreen
+    }
 }
