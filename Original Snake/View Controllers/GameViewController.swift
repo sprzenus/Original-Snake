@@ -169,6 +169,10 @@ class GameViewController: UIViewController {
             view.layoutIfNeeded()
             self.highScoreStackView.transform = smallTransform
             self.scoreStackView.transform = bigTransform
+            self.highScoreLabel.textColor = UIColor.lightGray
+            self.highScoreTitleLabel.textColor = UIColor.darkGray
+            self.scoreLabel.textColor = UIColor.white
+            self.scoreTitleLabel.textColor = UIColor.lightGray
         }
         self.highScoreCenterXConstraint.constant = 0
         self.scoreCenterXConstraint.constant = 0
@@ -195,6 +199,10 @@ class GameViewController: UIViewController {
             self.view.layoutIfNeeded()
             self.highScoreStackView.transform = bigTransform
             self.scoreStackView.transform = smallTransform
+            self.highScoreLabel.textColor = UIColor.white
+            self.highScoreTitleLabel.textColor = UIColor.lightGray
+            self.scoreLabel.textColor = UIColor.lightGray
+            self.scoreTitleLabel.textColor = UIColor.darkGray
         }
     }
     
