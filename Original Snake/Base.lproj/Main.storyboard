@@ -87,11 +87,144 @@
                                     <action selector="backButtonClicked:" destination="qXP-LF-Ye9" eventType="touchUpInside" id="yPq-iL-uFy"/>
                                 </connections>
                             </button>
+                            <view alpha="0.080000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5P-YH-y6f">
+                                <rect key="frame" x="0.0" y="343.5" width="375" height="323.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Epd-zP-qFb" customClass="TriangleView" customModule="Original_Snake" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="323.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="firstPointX">
+                                                <real key="value" value="0.050000000000000003"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="firstPointY">
+                                                <real key="value" value="0.050000000000000003"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="secondPointX">
+                                                <real key="value" value="0.050000000000000003"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="secondPointY">
+                                                <real key="value" value="0.94999999999999996"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="thirdPointX">
+                                                <real key="value" value="0.94999999999999996"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="thirdPointY">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" red="0.013682578899830156" green="1" blue="0.044976627753217979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Qw-6q-s3t" customClass="TriangleView" customModule="Original_Snake" customModuleProvider="target">
+                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="323.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="firstPointX">
+                                                <real key="value" value="0.94999999999999996"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="firstPointY">
+                                                <real key="value" value="0.050000000000000003"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="secondPointX">
+                                                <real key="value" value="0.94999999999999996"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="secondPointY">
+                                                <real key="value" value="0.94999999999999996"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="thirdPointX">
+                                                <real key="value" value="0.050000000000000003"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="thirdPointY">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" red="0.10505753307054844" green="0.15954747756714105" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dBP-DB-Tqn" customClass="TriangleView" customModule="Original_Snake" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="firstPointX">
+                                                <real key="value" value="0.050000000000000003"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="secondPointX">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="secondPointY">
+                                                <real key="value" value="0.94999999999999996"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="thirdPointX">
+                                                <real key="value" value="0.94999999999999996"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="thirdPointY">
+                                                <real key="value" value="0.050000000000000003"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="firstPointY">
+                                                <real key="value" value="0.050000000000000003"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B2y-fv-GHu" customClass="TriangleView" customModule="Original_Snake" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="162" width="375" height="161.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="firstPointX">
+                                                <real key="value" value="0.050000000000000003"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="secondPointX">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="secondPointY">
+                                                <real key="value" value="0.050000000000000003"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="thirdPointX">
+                                                <real key="value" value="0.94999999999999996"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="thirdPointY">
+                                                <real key="value" value="0.94999999999999996"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="firstPointY">
+                                                <real key="value" value="0.94999999999999996"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" red="1" green="0.94422252636305837" blue="0.059634786524727423" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="B2y-fv-GHu" firstAttribute="leading" secondItem="H5P-YH-y6f" secondAttribute="leading" id="0Cm-2d-a0r"/>
+                                    <constraint firstItem="dBP-DB-Tqn" firstAttribute="top" secondItem="H5P-YH-y6f" secondAttribute="top" id="0Jo-9C-cv1"/>
+                                    <constraint firstItem="dBP-DB-Tqn" firstAttribute="height" secondItem="H5P-YH-y6f" secondAttribute="height" multiplier="0.5" id="2Iw-RB-NPJ"/>
+                                    <constraint firstItem="Epd-zP-qFb" firstAttribute="leading" secondItem="H5P-YH-y6f" secondAttribute="leading" id="8Ak-pd-L39"/>
+                                    <constraint firstAttribute="trailing" secondItem="B2y-fv-GHu" secondAttribute="trailing" id="Ahs-Rd-YPv"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Qw-6q-s3t" secondAttribute="trailing" id="DJO-nh-vT1"/>
+                                    <constraint firstItem="2Qw-6q-s3t" firstAttribute="width" secondItem="Epd-zP-qFb" secondAttribute="width" id="F2x-Gm-Kjn"/>
+                                    <constraint firstAttribute="bottom" secondItem="B2y-fv-GHu" secondAttribute="bottom" id="Jlj-4g-lrE"/>
+                                    <constraint firstAttribute="bottom" secondItem="Epd-zP-qFb" secondAttribute="bottom" id="RWL-XW-s67"/>
+                                    <constraint firstItem="2Qw-6q-s3t" firstAttribute="top" secondItem="H5P-YH-y6f" secondAttribute="top" id="V34-Ni-330"/>
+                                    <constraint firstItem="dBP-DB-Tqn" firstAttribute="leading" secondItem="H5P-YH-y6f" secondAttribute="leading" id="Ygj-T8-OjY"/>
+                                    <constraint firstItem="B2y-fv-GHu" firstAttribute="height" secondItem="dBP-DB-Tqn" secondAttribute="height" id="bQW-by-nlx"/>
+                                    <constraint firstItem="Epd-zP-qFb" firstAttribute="top" secondItem="H5P-YH-y6f" secondAttribute="top" id="tj5-1Z-sl2"/>
+                                    <constraint firstAttribute="bottom" secondItem="2Qw-6q-s3t" secondAttribute="bottom" id="vjV-fR-4ZM"/>
+                                    <constraint firstAttribute="trailing" secondItem="dBP-DB-Tqn" secondAttribute="trailing" id="xpP-gL-RKJ"/>
+                                    <constraint firstItem="Epd-zP-qFb" firstAttribute="width" secondItem="H5P-YH-y6f" secondAttribute="width" multiplier="0.5" id="zoH-jM-p0r"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Dxf-G1-iSQ" firstAttribute="centerX" secondItem="FQN-4S-7jL" secondAttribute="centerX" id="6T1-I2-9oT"/>
-                            <constraint firstItem="Dxf-G1-iSQ" firstAttribute="centerY" secondItem="FQN-4S-7jL" secondAttribute="centerY" id="LM2-Cj-gMU"/>
+                            <constraint firstItem="Dxf-G1-iSQ" firstAttribute="centerX" secondItem="n1T-12-uXy" secondAttribute="centerX" id="6T1-I2-9oT"/>
+                            <constraint firstItem="n1T-12-uXy" firstAttribute="trailing" secondItem="H5P-YH-y6f" secondAttribute="trailing" id="9Xu-wB-3Wf"/>
+                            <constraint firstItem="H5P-YH-y6f" firstAttribute="height" secondItem="n1T-12-uXy" secondAttribute="height" multiplier="0.5" id="AVU-DM-8Lr"/>
+                            <constraint firstItem="Dxf-G1-iSQ" firstAttribute="centerY" secondItem="n1T-12-uXy" secondAttribute="centerY" constant="-10" id="LM2-Cj-gMU"/>
+                            <constraint firstItem="H5P-YH-y6f" firstAttribute="leading" secondItem="n1T-12-uXy" secondAttribute="leading" id="eke-oS-46U"/>
+                            <constraint firstItem="n1T-12-uXy" firstAttribute="bottom" secondItem="H5P-YH-y6f" secondAttribute="bottom" id="flQ-0b-CzX"/>
                             <constraint firstItem="Pw0-tQ-FfB" firstAttribute="leading" secondItem="n1T-12-uXy" secondAttribute="leading" constant="8" id="ktf-fU-5Wj"/>
                             <constraint firstItem="Pw0-tQ-FfB" firstAttribute="top" secondItem="n1T-12-uXy" secondAttribute="top" id="y9V-MY-hSg"/>
                         </constraints>
@@ -104,7 +237,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XyX-uZ-UAm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2239" y="27"/>
+            <point key="canvasLocation" x="2237.5999999999999" y="26.53673163418291"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ud2-Hf-dCp">

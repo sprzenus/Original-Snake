@@ -51,40 +51,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8A98B56121CE8A6400BB7CBF /* New Group */ = {
+		8A98B56121CE8A6400BB7CBF /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
 				8AFC7F0621B6ED6300F09BF4 /* ObjectView.swift */,
 				8A98B55F21CE889E00BB7CBF /* TriangleView.swift */,
 			);
-			path = "New Group";
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
-		8A98B56221CE8A7700BB7CBF /* New Group1 */ = {
+		8A98B56221CE8A7700BB7CBF /* Game Objects */ = {
 			isa = PBXGroup;
 			children = (
 				8AFC7F0A21B6F69100F09BF4 /* Snake.swift */,
 				8AFC7F1221B7E77300F09BF4 /* Food.swift */,
 				8AFC7F1021B7B7EF00F09BF4 /* Game.swift */,
 			);
-			path = "New Group1";
+			path = "Game Objects";
 			sourceTree = "<group>";
 		};
-		8A98B56321CE8A8A00BB7CBF /* New Group2 */ = {
+		8A98B56321CE8A8A00BB7CBF /* Custom Classes */ = {
 			isa = PBXGroup;
 			children = (
 				8AFC7F0C21B6FB9300F09BF4 /* Queue.swift */,
 				8AFC7F0E21B6FCB500F09BF4 /* Point.swift */,
 			);
-			path = "New Group2";
+			path = "Custom Classes";
 			sourceTree = "<group>";
 		};
-		8A98B56421CE8A9100BB7CBF /* New Group3 */ = {
+		8A98B56421CE8A9100BB7CBF /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				8AFC7F0821B6EF6E00F09BF4 /* Constants.swift */,
 			);
-			path = "New Group3";
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		8AFC7EE621B6E5FB00F09BF4 = {
@@ -106,10 +106,10 @@
 		8AFC7EF121B6E5FB00F09BF4 /* Original Snake */ = {
 			isa = PBXGroup;
 			children = (
-				8A98B56121CE8A6400BB7CBF /* New Group */,
-				8A98B56221CE8A7700BB7CBF /* New Group1 */,
-				8A98B56321CE8A8A00BB7CBF /* New Group2 */,
-				8A98B56421CE8A9100BB7CBF /* New Group3 */,
+				8A98B56121CE8A6400BB7CBF /* Custom Views */,
+				8A98B56221CE8A7700BB7CBF /* Game Objects */,
+				8A98B56321CE8A8A00BB7CBF /* Custom Classes */,
+				8A98B56421CE8A9100BB7CBF /* Utilities */,
 				8AFC7EF221B6E5FB00F09BF4 /* AppDelegate.swift */,
 				8AFC7F0421B6E9F000F09BF4 /* GameViewController.swift */,
 				8AFC7EF621B6E5FB00F09BF4 /* Main.storyboard */,

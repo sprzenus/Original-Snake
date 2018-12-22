@@ -29,6 +29,10 @@ class GameViewController: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         refresh()
@@ -47,11 +51,16 @@ class GameViewController: UIViewController {
     }
     
     private func getDirectionToMove(_ touchLocation: CGPoint) -> Snake.Direction {
-        let factor = view.frame.width / view.frame.height / 2
-        let touchY = touchLocation.y - view.bounds.height
-        let touchX = touchLocation.x
+        let steeringViewRect = CGRect(x: view.frame.minX,
+                                      y: view.frame.maxY / 2,
+                                      width: view.frame.width,
+                                      height: view.frame.height / 2)
+        
+        let factor = steeringViewRect.width / steeringViewRect.height
+        let touchY = touchLocation.y - steeringViewRect.minY
+        let touchX = touchLocation.x - steeringViewRect.minX
         let first = touchX - touchY * factor // \
-        let second = touchX - (view.frame.height - touchY) * factor // /
+        let second = touchX - (steeringViewRect.height - touchY) * factor // /
         
         if first < 0 && second < 0 {
             return .left
@@ -111,4 +120,5 @@ class GameViewController: UIViewController {
         let pointOnScreen = view.convert(pointInArea, from: gameAreaView)
         return pointOnScreen
     }
+    
 }
