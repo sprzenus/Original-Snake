@@ -74,14 +74,16 @@ class Game {
         
     private func randomFoodPosition() -> Point {
         let allFields = Constants.gameAreaSize * Constants.gameAreaSize
-        let emptyFields = allFields - snake.body.count
+        let emptyFields = allFields - snake.body.count - 1
         var randomNumber = Int.random(in: 0..<emptyFields)
         for i in 0..<allFields {
             let x = i % Constants.gameAreaSize
             let y = i / Constants.gameAreaSize
-            guard !snake.body.contains(where: { $0 == Point(x: x, y: y) }) else { continue }
+            let point = Point(x: x, y: y)
+            guard !snake.body.contains(where: { $0 == point })
+                || snake.head + snake.moveDirection.point == point else { continue }
             if randomNumber == 0 {
-                return Point(x: x, y: y)
+                return point
             }
             randomNumber -= 1
         }
