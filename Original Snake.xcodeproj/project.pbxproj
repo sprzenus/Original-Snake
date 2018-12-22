@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8A98B56021CE889E00BB7CBF /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98B55F21CE889E00BB7CBF /* TriangleView.swift */; };
+		8A98B56721CEA00300BB7CBF /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98B56621CEA00300BB7CBF /* UserDefaultsExtension.swift */; };
+		8A98B56921CEA05500BB7CBF /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98B56821CEA05500BB7CBF /* Score.swift */; };
 		8AFC7EF321B6E5FB00F09BF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFC7EF221B6E5FB00F09BF4 /* AppDelegate.swift */; };
 		8AFC7EF821B6E5FB00F09BF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AFC7EF621B6E5FB00F09BF4 /* Main.storyboard */; };
 		8AFC7EFA21B6E60000F09BF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AFC7EF921B6E60000F09BF4 /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		8A98B55F21CE889E00BB7CBF /* TriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
+		8A98B56621CEA00300BB7CBF /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
+		8A98B56821CEA05500BB7CBF /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		8AFC7EEF21B6E5FB00F09BF4 /* Original Snake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Original Snake.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AFC7EF221B6E5FB00F09BF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AFC7EF721B6E5FB00F09BF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -70,13 +74,14 @@
 			path = "Game Objects";
 			sourceTree = "<group>";
 		};
-		8A98B56321CE8A8A00BB7CBF /* Custom Classes */ = {
+		8A98B56321CE8A8A00BB7CBF /* Structures */ = {
 			isa = PBXGroup;
 			children = (
 				8AFC7F0C21B6FB9300F09BF4 /* Queue.swift */,
 				8AFC7F0E21B6FCB500F09BF4 /* Point.swift */,
+				8A98B56821CEA05500BB7CBF /* Score.swift */,
 			);
-			path = "Custom Classes";
+			path = Structures;
 			sourceTree = "<group>";
 		};
 		8A98B56421CE8A9100BB7CBF /* Utilities */ = {
@@ -85,6 +90,14 @@
 				8AFC7F0821B6EF6E00F09BF4 /* Constants.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8A98B56521CE9FEB00BB7CBF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8A98B56621CEA00300BB7CBF /* UserDefaultsExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8AFC7EE621B6E5FB00F09BF4 = {
@@ -106,9 +119,10 @@
 		8AFC7EF121B6E5FB00F09BF4 /* Original Snake */ = {
 			isa = PBXGroup;
 			children = (
+				8A98B56521CE9FEB00BB7CBF /* Extensions */,
 				8A98B56121CE8A6400BB7CBF /* Custom Views */,
 				8A98B56221CE8A7700BB7CBF /* Game Objects */,
-				8A98B56321CE8A8A00BB7CBF /* Custom Classes */,
+				8A98B56321CE8A8A00BB7CBF /* Structures */,
 				8A98B56421CE8A9100BB7CBF /* Utilities */,
 				8AFC7EF221B6E5FB00F09BF4 /* AppDelegate.swift */,
 				8AFC7F0421B6E9F000F09BF4 /* GameViewController.swift */,
@@ -201,6 +215,8 @@
 				8A98B56021CE889E00BB7CBF /* TriangleView.swift in Sources */,
 				8AFC7F0921B6EF6E00F09BF4 /* Constants.swift in Sources */,
 				8AFC7F1121B7B7EF00F09BF4 /* Game.swift in Sources */,
+				8A98B56921CEA05500BB7CBF /* Score.swift in Sources */,
+				8A98B56721CEA00300BB7CBF /* UserDefaultsExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,5 +21,7 @@ class Constants {
     
     static let startingSnakeSize: Int = 3
     
-    static let refreshTimeInterval: TimeInterval = 0.25
+    static let speedInPointsPerSecond: Double = 5
+    
+    static let refreshTimeInterval: TimeInterval = 1 / Constants.speedInPointsPerSecond
 }

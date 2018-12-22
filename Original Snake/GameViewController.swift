@@ -13,6 +13,8 @@ class GameViewController: UIViewController {
     @IBOutlet var gameAreaView: UIView!
     @IBOutlet var gameAreaSizeConstraint: NSLayoutConstraint!
     
+    @IBOutlet var scoreLabel: UILabel!
+    
     lazy var game: Game = {
         return Game(vc: self)
     }()
@@ -36,6 +38,10 @@ class GameViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         refresh()
+    }
+    
+    func scoreChanged() {
+        scoreLabel.text = String(describing: game.score)
     }
     
     @objc func viewTapped(_ touch: UITapGestureRecognizer) {
@@ -112,6 +118,7 @@ class GameViewController: UIViewController {
     
     private func startNewGame() {
         game = Game(vc: self)
+        scoreChanged()
         refresh()
     }
     

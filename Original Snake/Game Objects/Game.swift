@@ -11,6 +11,11 @@ import Foundation
 class Game {
     let snake = Snake()
     var food: Food
+    var score: Int = 0 {
+        didSet {
+            vc?.scoreChanged()
+        }
+    }
     weak var vc: GameViewController?
     private(set) var isStopped = false
     private(set) var isPaused = true
@@ -58,6 +63,7 @@ class Game {
         }
         if snake.head == food.position {
             snake.eat(food)
+            score += 1
             food = Food(position: randomFoodPosition())
             return
         }
@@ -70,11 +76,9 @@ class Game {
         for i in 0..<allFields {
             let x = i % Constants.gameAreaSize
             let y = i / Constants.gameAreaSize
+            guard !snake.body.contains(where: { $0 == Point(x: x, y: y) }) else { continue }
             if randomNumber == 0 {
                 return Point(x: x, y: y)
-            }
-            if snake.body.contains(where: { $0 == Point(x: x, y: y) }) {
-                continue
             }
             randomNumber -= 1
         }

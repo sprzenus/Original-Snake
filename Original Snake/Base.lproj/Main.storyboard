@@ -216,13 +216,29 @@
                                     <constraint firstItem="Epd-zP-qFb" firstAttribute="width" secondItem="H5P-YH-y6f" secondAttribute="width" multiplier="0.5" id="zoH-jM-p0r"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWU-eJ-p3w">
+                                <rect key="frame" x="180.5" y="117" width="14.5" height="30"/>
+                                <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iL-CT-lzs">
+                                <rect key="frame" x="165.5" y="93" width="44.5" height="20"/>
+                                <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Dxf-G1-iSQ" firstAttribute="centerX" secondItem="n1T-12-uXy" secondAttribute="centerX" id="6T1-I2-9oT"/>
                             <constraint firstItem="n1T-12-uXy" firstAttribute="trailing" secondItem="H5P-YH-y6f" secondAttribute="trailing" id="9Xu-wB-3Wf"/>
                             <constraint firstItem="H5P-YH-y6f" firstAttribute="height" secondItem="n1T-12-uXy" secondAttribute="height" multiplier="0.5" id="AVU-DM-8Lr"/>
+                            <constraint firstItem="fWU-eJ-p3w" firstAttribute="centerX" secondItem="FQN-4S-7jL" secondAttribute="centerX" id="DCo-mX-NJF"/>
                             <constraint firstItem="Dxf-G1-iSQ" firstAttribute="centerY" secondItem="n1T-12-uXy" secondAttribute="centerY" constant="-10" id="LM2-Cj-gMU"/>
+                            <constraint firstItem="7iL-CT-lzs" firstAttribute="centerX" secondItem="fWU-eJ-p3w" secondAttribute="centerX" id="TGH-Hr-aZT"/>
+                            <constraint firstItem="Dxf-G1-iSQ" firstAttribute="top" secondItem="fWU-eJ-p3w" secondAttribute="bottom" constant="36.5" id="VVr-hz-86H"/>
+                            <constraint firstItem="fWU-eJ-p3w" firstAttribute="top" secondItem="7iL-CT-lzs" secondAttribute="bottom" constant="4" id="d6p-Yv-BTs"/>
                             <constraint firstItem="H5P-YH-y6f" firstAttribute="leading" secondItem="n1T-12-uXy" secondAttribute="leading" id="eke-oS-46U"/>
                             <constraint firstItem="n1T-12-uXy" firstAttribute="bottom" secondItem="H5P-YH-y6f" secondAttribute="bottom" id="flQ-0b-CzX"/>
                             <constraint firstItem="Pw0-tQ-FfB" firstAttribute="leading" secondItem="n1T-12-uXy" secondAttribute="leading" constant="8" id="ktf-fU-5Wj"/>
@@ -233,6 +249,7 @@
                     <connections>
                         <outlet property="gameAreaSizeConstraint" destination="6bv-KB-FrE" id="xAZ-AB-YoG"/>
                         <outlet property="gameAreaView" destination="Dxf-G1-iSQ" id="qDA-Ts-TOl"/>
+                        <outlet property="scoreLabel" destination="fWU-eJ-p3w" id="WYK-vD-PMS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XyX-uZ-UAm" userLabel="First Responder" sceneMemberID="firstResponder"/>
