@@ -13,7 +13,16 @@ class GameViewController: UIViewController {
     @IBOutlet var gameAreaView: UIView!
     @IBOutlet var gameAreaSizeConstraint: NSLayoutConstraint!
     
+    
+    @IBOutlet var scoreStackView: UIStackView!
+    @IBOutlet var scoreTitleLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet var scoreCenterXConstraint: NSLayoutConstraint!
+    
+    @IBOutlet var highScoreStackView: UIStackView!
+    @IBOutlet var highScoreTitleLabel: UILabel!
+    @IBOutlet var highScoreLabel: UILabel!
+    @IBOutlet var highScoreCenterXConstraint: NSLayoutConstraint!
     
     var snakeObjects: [SnakeObjectView] = []
     var foodObjects: [FoodObjectView] = []
@@ -22,6 +31,8 @@ class GameViewController: UIViewController {
         return Game(vc: self)
     }()
     
+    var highScore: Score = UserDefaults.standard.scores.first ?? Score(timestamp: 0, points: 0)
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         get { return .lightContent }
     }
@@ -29,6 +40,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         gameAreaSizeConstraint.constant = Constants.gameAreaSizeInPoints
+        setupHighScore(animated: false)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.viewTapped(_:)))
         view.addGestureRecognizer(tap)
@@ -44,7 +56,12 @@ class GameViewController: UIViewController {
     }
     
     func scoreChanged() {
-        scoreLabel.text = String(describing: game.score)
+        if game.score <= highScore.points {
+            scoreLabel.text = String(describing: game.score)
+        } else {
+            animateTakingAdvantageOfHighScore()
+            highScoreLabel.text = String(describing: game.score)
+        }
     }
     
     @objc func viewTapped(_ touch: UITapGestureRecognizer) {
@@ -141,7 +158,44 @@ class GameViewController: UIViewController {
     private func startNewGame() {
         game = Game(vc: self)
         scoreChanged()
+        setupHighScore(animated: true)
         refresh()
+    }
+    
+    private func setupHighScore(animated: Bool) {
+        let bigTransform = CGAffineTransform(scaleX: 1, y: 1)
+        let smallTransform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+        func setupThings() {
+            view.layoutIfNeeded()
+            self.highScoreStackView.transform = smallTransform
+            self.scoreStackView.transform = bigTransform
+        }
+        self.highScoreCenterXConstraint.constant = 0
+        self.scoreCenterXConstraint.constant = 0
+        if animated {
+            UIView.animate(withDuration: 0.3) {
+                setupThings()
+            }
+        } else {
+            setupThings()
+        }
+        highScore = UserDefaults.standard.scores.first ?? Score(timestamp: 0, points: 0)
+        highScoreLabel.text = String(describing: highScore.points)
+    }
+    
+    private func animateTakingAdvantageOfHighScore() {
+        let bigTransform = CGAffineTransform(scaleX: 1, y: 1)
+        let smallTransform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+        let highScoreCenterX = highScoreStackView.frame.minX + highScoreStackView.frame.width / 2
+        let scoreCenterX = scoreStackView.frame.minX + scoreStackView.frame.width / 2
+        let difference = highScoreCenterX - scoreCenterX
+        highScoreCenterXConstraint.constant = -difference
+        scoreCenterXConstraint.constant = -difference
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+            self.highScoreStackView.transform = bigTransform
+            self.scoreStackView.transform = smallTransform
+        }
     }
     
     private func getLocationByPoint(_ point: Point) -> CGPoint {
