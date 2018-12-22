@@ -81,7 +81,7 @@ class Game {
             let y = i / Constants.gameAreaSize
             let point = Point(x: x, y: y)
             guard !snake.body.contains(where: { $0 == point })
-                || snake.head + snake.moveDirection.point == point else { continue }
+                && food.position != point else { continue }
             if randomNumber == 0 {
                 return point
             }

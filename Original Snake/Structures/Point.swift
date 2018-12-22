@@ -26,3 +26,7 @@ func +(left: Point, right: Point) -> Point {
 func ==(left: Point, right: Point) -> Bool {
     return left.x == right.x && left.y == right.y
 }
+
+func !=(left: Point, right: Point) -> Bool {
+    return left.x != right.x || left.y != right.y
+}

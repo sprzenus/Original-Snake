@@ -55,7 +55,7 @@ class Snake {
     }
     
     func eat(_ food: Food) {
-        length += 3
+        length += Constants.snakeGrowth
     }
     
     enum Direction {
