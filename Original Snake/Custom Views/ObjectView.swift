@@ -10,6 +10,10 @@ import UIKit
 
 class ObjectView: UIView {
     
+    var objectColor: UIColor {
+        return .white
+    }
+    
     init(size: CGFloat) {
         super.init(frame: CGRect(x: 0, y: 0, width: size, height: size))
     }
@@ -29,7 +33,7 @@ class ObjectView: UIView {
         backgroundColor = .clear
         
         let subview = UIView()
-        subview.backgroundColor = .white
+        subview.backgroundColor = objectColor
         addSubview(subview)
         subview.translatesAutoresizingMaskIntoConstraints = false
         

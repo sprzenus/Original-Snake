@@ -15,6 +15,9 @@ class GameViewController: UIViewController {
     
     @IBOutlet var scoreLabel: UILabel!
     
+    var snakeObjects: [SnakeObjectView] = []
+    var foodObjects: [FoodObjectView] = []
+    
     lazy var game: Game = {
         return Game(vc: self)
     }()
@@ -84,31 +87,50 @@ class GameViewController: UIViewController {
     }
     
     private func draw() {
-        var tempObjects = gameAreaView.subviews
+        var oldSnakeObjects = snakeObjects
+        var oldFoodObjects = foodObjects
+        snakeObjects.removeAll()
+        foodObjects.removeAll()
         for snakePosition in game.snake.body {
-            if let object = tempObjects.popLast() as? ObjectView {
+            if let object = oldSnakeObjects.popLast() {
                 reuseObject(object, at: snakePosition)
             } else {
-                createObject(at: snakePosition)
+                createSnakeObject(at: snakePosition)
             }
         }
-        if let object = tempObjects.popLast() as? ObjectView {
+        if let object = oldFoodObjects.popLast() {
             reuseObject(object, at: game.food.position)
         } else {
-            createObject(at: game.food.position)
+            createFoodObject(at: game.food.position)
         }
-        if !tempObjects.isEmpty {
-            tempObjects.forEach { $0.removeFromSuperview() }
+        if !oldSnakeObjects.isEmpty {
+            oldSnakeObjects.forEach { $0.removeFromSuperview() }
+        }
+        if !oldFoodObjects.isEmpty {
+            oldFoodObjects.forEach { $0.removeFromSuperview() }
         }
     }
     
     private func reuseObject(_ object: ObjectView, at point: Point) {
         object.place(at: point)
+        if let snakeObject = object as? SnakeObjectView {
+            snakeObjects.append(snakeObject)
+        } else if let foodObject  = object as? FoodObjectView {
+            foodObjects.append(foodObject)
+        }
     }
     
-    private func createObject(at point: Point) {
-        let object = ObjectView()
+    private func createFoodObject(at point: Point) {
+        let object = FoodObjectView()
         object.place(at: point)
+        foodObjects.append(object)
+        gameAreaView.addSubview(object)
+    }
+    
+    private func createSnakeObject(at point: Point) {
+        let object = SnakeObjectView()
+        object.place(at: point)
+        snakeObjects.append(object)
         gameAreaView.addSubview(object)
     }
     

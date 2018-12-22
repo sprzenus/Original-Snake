@@ -61,7 +61,7 @@ class Game {
                 return
             }
         }
-        if snake.head == food.position {
+        if snake.head + snake.moveDirection.point == food.position {
             snake.eat(food)
             score += 1
             food = Food(position: randomFoodPosition())
