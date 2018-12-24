@@ -64,16 +64,21 @@ class GameViewController: UIViewController {
         }
     }
     
-    @objc func viewTapped(_ touch: UITapGestureRecognizer) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if game.isPaused {
             game.resume()
         } else if game.isStopped {
             startNewGame()
         } else {
+            let touch = touches[touches.index(touches.startIndex, offsetBy: touches.count - 1)]
             let touchLocation = touch.location(in: view)
             let directionToMove = getDirectionToMove(touchLocation)
             game.snake.moveDirection = directionToMove
         }
+    }
+    
+    @objc func viewTapped(_ touch: UITapGestureRecognizer) {
+        
     }
     
     private func getDirectionToMove(_ touchLocation: CGPoint) -> Snake.Direction {

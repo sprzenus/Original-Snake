@@ -9,21 +9,23 @@
 import UIKit
 
 class Constants {
-    static let scale: CGFloat = 10
-    
     static let gameAreaSizeInPoints: CGFloat = 300
     
-    static let gameAreaSize: Int = {
-        let size = gameAreaSizeInPoints / scale
-        guard size == size.rounded() else { fatalError("Size of game area cannot be integer") }
-        return Int(size)
-    }()
+    static let gameAreaSize: Int = 25
     
     static let startingSnakeSize: Int = 3
     
-    static let speedInPointsPerSecond: Double = 5
+    static let speedInPointsPerSecond: Double = 7
     
-    static let refreshTimeInterval: TimeInterval = 1 / Constants.speedInPointsPerSecond
     
     static let snakeGrowth: Int = 3
+    
+    // MARK: Constants set automatically
+    
+    static let scale: CGFloat = {
+        return CGFloat(gameAreaSizeInPoints) / CGFloat(gameAreaSize)
+    }()
+    
+    static let refreshTimeInterval: TimeInterval = 1 / Constants.speedInPointsPerSecond
+
 }
