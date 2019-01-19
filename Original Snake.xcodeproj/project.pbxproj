@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A03F3EB21F3673400023C65 /* OriginalSnakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F3EA21F3673400023C65 /* OriginalSnakeTests.swift */; };
 		8A98B56021CE889E00BB7CBF /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98B55F21CE889E00BB7CBF /* TriangleView.swift */; };
 		8A98B56721CEA00300BB7CBF /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98B56621CEA00300BB7CBF /* UserDefaultsExtension.swift */; };
 		8A98B56921CEA05500BB7CBF /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98B56821CEA05500BB7CBF /* Score.swift */; };
@@ -28,7 +29,20 @@
 		8AFC7F1321B7E77300F09BF4 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFC7F1221B7E77300F09BF4 /* Food.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8A03F3ED21F3673400023C65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AFC7EE721B6E5FB00F09BF4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8AFC7EEE21B6E5FB00F09BF4;
+			remoteInfo = "Original Snake";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		8A03F3E821F3673400023C65 /* OriginalSnakeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OriginalSnakeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A03F3EA21F3673400023C65 /* OriginalSnakeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalSnakeTests.swift; sourceTree = "<group>"; };
+		8A03F3EC21F3673400023C65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A98B55F21CE889E00BB7CBF /* TriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
 		8A98B56621CEA00300BB7CBF /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		8A98B56821CEA05500BB7CBF /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
@@ -53,6 +67,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8A03F3E521F3673400023C65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8AFC7EEC21B6E5FB00F09BF4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -63,6 +84,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A03F3E921F3673400023C65 /* OriginalSnakeTests */ = {
+			isa = PBXGroup;
+			children = (
+				8A03F3EA21F3673400023C65 /* OriginalSnakeTests.swift */,
+				8A03F3EC21F3673400023C65 /* Info.plist */,
+			);
+			path = OriginalSnakeTests;
+			sourceTree = "<group>";
+		};
 		8A98B56121CE8A6400BB7CBF /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				8AFC7EF121B6E5FB00F09BF4 /* Original Snake */,
+				8A03F3E921F3673400023C65 /* OriginalSnakeTests */,
 				8AFC7EF021B6E5FB00F09BF4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -140,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				8AFC7EEF21B6E5FB00F09BF4 /* Original Snake.app */,
+				8A03F3E821F3673400023C65 /* OriginalSnakeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,6 +197,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8A03F3E721F3673400023C65 /* OriginalSnakeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A03F3F121F3673400023C65 /* Build configuration list for PBXNativeTarget "OriginalSnakeTests" */;
+			buildPhases = (
+				8A03F3E421F3673400023C65 /* Sources */,
+				8A03F3E521F3673400023C65 /* Frameworks */,
+				8A03F3E621F3673400023C65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A03F3EE21F3673400023C65 /* PBXTargetDependency */,
+			);
+			name = OriginalSnakeTests;
+			productName = OriginalSnakeTests;
+			productReference = 8A03F3E821F3673400023C65 /* OriginalSnakeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		8AFC7EEE21B6E5FB00F09BF4 /* Original Snake */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8AFC7F0121B6E60000F09BF4 /* Build configuration list for PBXNativeTarget "Original Snake" */;
@@ -192,6 +242,10 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Bartłomiej Świerad";
 				TargetAttributes = {
+					8A03F3E721F3673400023C65 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 8AFC7EEE21B6E5FB00F09BF4;
+					};
 					8AFC7EEE21B6E5FB00F09BF4 = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -211,11 +265,19 @@
 			projectRoot = "";
 			targets = (
 				8AFC7EEE21B6E5FB00F09BF4 /* Original Snake */,
+				8A03F3E721F3673400023C65 /* OriginalSnakeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8A03F3E621F3673400023C65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8AFC7EED21B6E5FB00F09BF4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -229,6 +291,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8A03F3E421F3673400023C65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A03F3EB21F3673400023C65 /* OriginalSnakeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8AFC7EEB21B6E5FB00F09BF4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -254,6 +324,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8A03F3EE21F3673400023C65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8AFC7EEE21B6E5FB00F09BF4 /* Original Snake */;
+			targetProxy = 8A03F3ED21F3673400023C65 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		8AFC7EF621B6E5FB00F09BF4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -274,6 +352,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8A03F3EF21F3673400023C65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QU6C4PQH66;
+				INFOPLIST_FILE = OriginalSnakeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sprzenus.OriginalSnakeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Original Snake.app/Original Snake";
+			};
+			name = Debug;
+		};
+		8A03F3F021F3673400023C65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QU6C4PQH66;
+				INFOPLIST_FILE = OriginalSnakeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sprzenus.OriginalSnakeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Original Snake.app/Original Snake";
+			};
+			name = Release;
+		};
 		8AFC7EFF21B6E60000F09BF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -431,6 +549,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8A03F3F121F3673400023C65 /* Build configuration list for PBXNativeTarget "OriginalSnakeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A03F3EF21F3673400023C65 /* Debug */,
+				8A03F3F021F3673400023C65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8AFC7EEA21B6E5FB00F09BF4 /* Build configuration list for PBXProject "Original Snake" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
