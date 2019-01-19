@@ -21,7 +21,7 @@ class Game {
     private(set) var isPaused = true
     private(set) var timer = Timer()
     
-    init(vc: GameViewController) {
+    init(vc: GameViewController?) {
         self.vc = vc
         food = Food()
         food.position = randomFoodPosition()

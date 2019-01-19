@@ -13,8 +13,12 @@ class Snake {
     var moveDirection: Direction = .down {
         didSet {
             if !canChangeMoveDirection {
-                moveDirectionQueueElement = moveDirection
-                moveDirection = oldValue
+                if moveDirection != oldValue.oppositeDirection {
+                    moveDirectionQueueElement = moveDirection
+                    moveDirection = oldValue
+                } else {
+                    moveDirectionQueueElement = nil
+                }
             } else if moveDirection == oldValue.oppositeDirection {
                 moveDirection = oldValue
             } else {
