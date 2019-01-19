@@ -70,7 +70,16 @@ class GameViewController: UIViewController {
         } else if game.isStopped {
             startNewGame()
         } else {
-            let touch = touches[touches.index(touches.startIndex, offsetBy: touches.count - 1)]
+            guard let touch = touches.first else { fatalError() }
+            let touchLocation = touch.location(in: view)
+            let directionToMove = getDirectionToMove(touchLocation)
+            game.snake.moveDirection = directionToMove
+        }
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if !game.isPaused && !game.isStopped {
+            guard let touch = touches.first else { fatalError() }
             let touchLocation = touch.location(in: view)
             let directionToMove = getDirectionToMove(touchLocation)
             game.snake.moveDirection = directionToMove
