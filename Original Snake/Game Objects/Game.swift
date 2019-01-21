@@ -25,6 +25,7 @@ class Game {
     private(set) var isStopped = false
     private(set) var isPaused = true
     private(set) var timer = Timer()
+    private(set) var collisionPoint: Point?
     
     init(vc: GameViewController?) {
         self.vc = vc
@@ -53,6 +54,7 @@ class Game {
         if score != 0 {
             UserDefaults.standard.scores.append(Score(timestamp: Int64(Date().timeIntervalSince1970), points: score))
         }
+        collisionPoint = snake.nextHeadPosition
     }
     
     public func manageCollision(_ type: CollisionType?) {

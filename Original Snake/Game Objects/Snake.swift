@@ -40,6 +40,9 @@ class Snake {
     var head: Point {
         get { return body.end! }
     }
+    var nextHeadPosition: Point {
+        return head + moveDirection.point
+    }
     
     init() {
         let beginningHead = Point(x: Constants.gameAreaSize/2, y: Constants.gameAreaSize/2)
@@ -49,11 +52,10 @@ class Snake {
     }
     
     func move() {
-        let newPoint = head + moveDirection.point
-        let collisionType = game?.checkCollision(newPoint)
+        let collisionType = game?.checkCollision(nextHeadPosition)
         game?.manageCollision(collisionType)
         if !(collisionType?.shouldStopTheGame ?? false) {
-            body.enqueue(newPoint)
+            body.enqueue(nextHeadPosition)
             if (body.count > length) {
                 _=body.dequeue()
             }

@@ -26,6 +26,7 @@ class GameViewController: UIViewController {
     
     var snakeObjects: [SnakeObjectView] = []
     var foodObjects: [FoodObjectView] = []
+    var collisionObject: CollisionObjectView?
     
     var game: Game {
         if Game.main?.vc == nil {
@@ -123,6 +124,8 @@ class GameViewController: UIViewController {
         var oldFoodObjects = foodObjects
         snakeObjects.removeAll()
         foodObjects.removeAll()
+        collisionObject?.removeFromSuperview()
+        collisionObject = nil
         for snakePosition in game.snake.body {
             if let object = oldSnakeObjects.popLast() {
                 reuseObject(object, at: snakePosition)
@@ -140,6 +143,9 @@ class GameViewController: UIViewController {
         }
         if !oldFoodObjects.isEmpty {
             oldFoodObjects.forEach { $0.removeFromSuperview() }
+        }
+        if let collisionPoint = game.collisionPoint {
+            createCollisionObject(at: collisionPoint)
         }
     }
     
@@ -163,6 +169,13 @@ class GameViewController: UIViewController {
         let object = SnakeObjectView()
         object.place(at: point)
         snakeObjects.append(object)
+        gameAreaView.addSubview(object)
+    }
+    
+    private func createCollisionObject(at point: Point) {
+        let object = CollisionObjectView()
+        object.place(at: point)
+        collisionObject = object
         gameAreaView.addSubview(object)
     }
     
