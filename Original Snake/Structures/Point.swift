@@ -9,6 +9,10 @@
 import Foundation
 
 struct Point: Equatable {
+    static var zero: Point {
+        return Point(x: 0, y: 0)
+    }
+    
     var x: Int
     var y: Int
 }

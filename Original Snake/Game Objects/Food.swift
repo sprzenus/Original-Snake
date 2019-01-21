@@ -9,10 +9,9 @@
 import Foundation
 
 class Food {
-    var position: Point = Point(x: 0, y: 0)
+    var position: Point
     
     init(position: Point) {
         self.position = position
     }
-    init () {}
 }

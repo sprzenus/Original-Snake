@@ -43,4 +43,20 @@ class GameTests: XCTestCase {
         XCTAssertEqual(game.checkCollision(pointOut), .gameArea , "No collision after reaching edge of game area")
         XCTAssertNotEqual(game.checkCollision(pointIn), .gameArea, "Collision before reaching edge of game area")
     }
+    
+    func testManageCollisionShouldStop() {
+        for collisionType in Game.CollisionType.allCases {
+            let newGame = Game(vc: nil)
+            newGame.manageCollision(collisionType)
+            XCTAssertEqual(newGame.isStopped,
+                           collisionType.shouldStopTheGame,
+                           "Game should be stopped after collision \(collisionType.rawValue)")
+        }
+    }
+    
+    func testManageCollisionWithFood() {
+        let newGame = Game(vc: nil)
+        newGame.manageCollision(.food)
+        XCTAssertEqual(newGame.score, 1, "Game score should be 1 after eating a food")
+    }
 }

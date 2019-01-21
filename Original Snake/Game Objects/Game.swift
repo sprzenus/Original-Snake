@@ -23,8 +23,7 @@ class Game {
     
     init(vc: GameViewController?) {
         self.vc = vc
-        food = Food()
-        food.position = randomFoodPosition()
+        food = Food(position: randomFoodPosition())
         snake.game = self
     }
     
@@ -114,7 +113,7 @@ class Game {
         return newHead == food.position
     }
     
-    enum CollisionType: String {
+    enum CollisionType: String, CaseIterable {
         case gameArea, food, snake
         
         var shouldStopTheGame: Bool {
