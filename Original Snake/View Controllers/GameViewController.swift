@@ -27,9 +27,13 @@ class GameViewController: UIViewController {
     var snakeObjects: [SnakeObjectView] = []
     var foodObjects: [FoodObjectView] = []
     
-    lazy var game: Game = {
-        return Game(vc: self)
-    }()
+    var game: Game {
+        if Game.main?.vc == nil {
+            Game.generateNewGame(vc: self)
+        }
+        guard let mainGame = Game.main else { fatalError("Main game shouldn't be nil") }
+        return mainGame
+    }
     
     var highScore: Score = UserDefaults.standard.scores.first ?? Score(timestamp: 0, points: 0)
     
@@ -170,7 +174,7 @@ class GameViewController: UIViewController {
     }
     
     private func startNewGame() {
-        game = Game(vc: self)
+        Game.main = nil
         scoreChanged()
         setupHighScore(animated: true)
         refresh()

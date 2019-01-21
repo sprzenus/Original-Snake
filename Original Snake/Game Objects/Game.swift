@@ -9,6 +9,11 @@
 import Foundation
 
 class Game {
+    static var main: Game?
+    static func generateNewGame(vc: GameViewController?) {
+        main = Game(vc: vc)
+    }
+    
     let snake = Snake()
     var food: Food
     var score: Int = 0 {
@@ -23,7 +28,8 @@ class Game {
     
     init(vc: GameViewController?) {
         self.vc = vc
-        food = Food(position: randomFoodPosition())
+        food = Food()
+        food.position = randomFoodPosition()
         snake.game = self
     }
     
