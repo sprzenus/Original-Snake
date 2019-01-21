@@ -46,9 +46,7 @@ class GameViewController: UIViewController {
         gameAreaSizeConstraint.constant = Constants.gameAreaSizeInPoints
         setupHighScore(animated: false)
         view.backgroundColor = UIColor.Custom.background.value(for: .dark)
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.viewTapped(_:)))
-        view.addGestureRecognizer(tap)
+        view.isMultipleTouchEnabled = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,23 +74,21 @@ class GameViewController: UIViewController {
             startNewGame()
         } else {
             guard let touch = touches.first else { fatalError() }
-            let touchLocation = touch.location(in: view)
-            let directionToMove = getDirectionToMove(touchLocation)
-            game.snake.moveDirection = directionToMove
+            changeSnakeMoveDirectionBasedOn(touch)
         }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if !game.isPaused && !game.isStopped {
             guard let touch = touches.first else { fatalError() }
-            let touchLocation = touch.location(in: view)
-            let directionToMove = getDirectionToMove(touchLocation)
-            game.snake.moveDirection = directionToMove
+            changeSnakeMoveDirectionBasedOn(touch)
         }
     }
     
-    @objc func viewTapped(_ touch: UITapGestureRecognizer) {
-        
+    func changeSnakeMoveDirectionBasedOn(_ touch: UITouch) {
+        let touchLocation = touch.location(in: view)
+        let directionToMove = getDirectionToMove(touchLocation)
+        game.snake.moveDirection = directionToMove
     }
     
     private func getDirectionToMove(_ touchLocation: CGPoint) -> Snake.Direction {
