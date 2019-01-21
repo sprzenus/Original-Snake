@@ -58,4 +58,30 @@ class SnakeTests: XCTestCase {
         
         XCTAssertEqual(snake.head, targetPosition, "Snake position after right-up-left misclick is wrong")
     }
+    
+    func testSnakeDoubleLeftAndUpMoveSequence() {
+        let snake = Snake()
+        let targetPosition = snake.head + Snake.Direction.left.point + Snake.Direction.up.point
+        
+        snake.moveDirection = .left
+        snake.moveDirection = .left
+        snake.moveDirection = .up
+        snake.move()
+        snake.move()
+        
+        XCTAssertEqual(snake.head, targetPosition, "Snake position after left-left-up sequence is wrong")
+    }
+    
+    func testSnakeDownRightUpMoveSequence() {
+        let snake = Snake()
+        let targetPosition = snake.head + Snake.Direction.right.point + Snake.Direction.up.point
+        
+        snake.moveDirection = .down
+        snake.moveDirection = .right
+        snake.moveDirection = .up
+        snake.move()
+        snake.move()
+        
+        XCTAssertEqual(snake.head, targetPosition, "Snake position after down-right-up misclick is wrong")
+    }
 }

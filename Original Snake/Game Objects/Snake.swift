@@ -21,7 +21,7 @@ class Snake {
                 }
             } else if moveDirection == oldValue.oppositeDirection {
                 moveDirection = oldValue
-            } else {
+            } else if moveDirection != oldValue {
                 canChangeMoveDirection = false
             }
         }
