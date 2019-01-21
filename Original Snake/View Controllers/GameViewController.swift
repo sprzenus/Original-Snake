@@ -45,6 +45,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         gameAreaSizeConstraint.constant = Constants.gameAreaSizeInPoints
         setupHighScore(animated: false)
+        view.backgroundColor = UIColor.Custom.background.value(for: .dark)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.viewTapped(_:)))
         view.addGestureRecognizer(tap)

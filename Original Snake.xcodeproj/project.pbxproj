@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8A03F3F321F3696800023C65 /* SnakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F3F221F3696800023C65 /* SnakeTests.swift */; };
 		8A03F3F721F5C7FB00023C65 /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F3F621F5C7FB00023C65 /* GameTests.swift */; };
+		8A03F3F921F644F200023C65 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F3F821F644F000023C65 /* Colors.swift */; };
+		8A03F3FB21F6460200023C65 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F3FA21F6460200023C65 /* Theme.swift */; };
 		8A98B56021CE889E00BB7CBF /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98B55F21CE889E00BB7CBF /* TriangleView.swift */; };
 		8A98B56721CEA00300BB7CBF /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98B56621CEA00300BB7CBF /* UserDefaultsExtension.swift */; };
 		8A98B56921CEA05500BB7CBF /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98B56821CEA05500BB7CBF /* Score.swift */; };
@@ -45,6 +47,8 @@
 		8A03F3EC21F3673400023C65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A03F3F221F3696800023C65 /* SnakeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeTests.swift; sourceTree = "<group>"; };
 		8A03F3F621F5C7FB00023C65 /* GameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
+		8A03F3F821F644F000023C65 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		8A03F3FA21F6460200023C65 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		8A98B55F21CE889E00BB7CBF /* TriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
 		8A98B56621CEA00300BB7CBF /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		8A98B56821CEA05500BB7CBF /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				8AFC7F0821B6EF6E00F09BF4 /* Constants.swift */,
+				8A03F3F821F644F000023C65 /* Colors.swift */,
+				8A03F3FA21F6460200023C65 /* Theme.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -310,11 +316,13 @@
 				8A98B56F21CECABD00BB7CBF /* HighScoresTableViewController.swift in Sources */,
 				8AFC7F0521B6E9F000F09BF4 /* GameViewController.swift in Sources */,
 				8A98B57321CECB6A00BB7CBF /* ScoreTableViewCell.swift in Sources */,
+				8A03F3F921F644F200023C65 /* Colors.swift in Sources */,
 				8A98B56D21CEC47A00BB7CBF /* FoodObjectView.swift in Sources */,
 				8AFC7F0D21B6FB9300F09BF4 /* Queue.swift in Sources */,
 				8AFC7F0721B6ED6300F09BF4 /* ObjectView.swift in Sources */,
 				8AFC7F0B21B6F69100F09BF4 /* Snake.swift in Sources */,
 				8AFC7F0F21B6FCB500F09BF4 /* Point.swift in Sources */,
+				8A03F3FB21F6460200023C65 /* Theme.swift in Sources */,
 				8AFC7F1321B7E77300F09BF4 /* Food.swift in Sources */,
 				8AFC7EF321B6E5FB00F09BF4 /* AppDelegate.swift in Sources */,
 				8A98B56021CE889E00BB7CBF /* TriangleView.swift in Sources */,
