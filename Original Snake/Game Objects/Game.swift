@@ -50,26 +50,30 @@ class Game {
         }
     }
     
-    public func checkCollision(_ newHead: Point) {
-        guard newHead.x > -1 && newHead.x < Constants.gameAreaSize &&
-            newHead.y > -1 && newHead.y < Constants.gameAreaSize else {
-                stop()
-                print("GAME OVER");
-                return
+    public func manageCollision(_ type: CollisionType?) {
+        guard let type = type else {
+            return
         }
-        for element in snake.body {
-            if newHead == element {
-                stop()
-                print("GAME OVER")
-                return
-            }
+        if type.shouldStopTheGame {
+            stop()
+            print("GAME OVER")
         }
-        if snake.head + snake.moveDirection.point == food.position {
+        if type == .food {
             snake.eat(food)
             score += 1
             food = Food(position: randomFoodPosition())
-            return
         }
+    }
+    
+    public func checkCollision(_ newHead: Point) -> CollisionType? {
+        if checkGameAreaEdgeCollision(newHead) {
+            return .gameArea
+        } else if checkSnakeCollision(newHead) {
+            return .snake
+        } else if checkFoodCollision(newHead) {
+            return .food
+        }
+        return nil
     }
         
     private func randomFoodPosition() -> Point {
@@ -90,5 +94,34 @@ class Game {
         let x = allFields % Constants.gameAreaSize
         let y = allFields / Constants.gameAreaSize
         return Point(x: x, y: y)
+    }
+    
+    private func checkGameAreaEdgeCollision(_ newHead: Point) -> Bool {
+        return !(newHead.x > -1 && newHead.x < Constants.gameAreaSize &&
+            newHead.y > -1 && newHead.y < Constants.gameAreaSize)
+    }
+    
+    private func checkSnakeCollision(_ newHead: Point) -> Bool {
+        for element in snake.body {
+            if newHead == element {
+                return true
+            }
+        }
+        return false
+    }
+    
+    private func checkFoodCollision(_ newHead: Point) -> Bool {
+        return newHead == food.position
+    }
+    
+    enum CollisionType: String {
+        case gameArea, food, snake
+        
+        var shouldStopTheGame: Bool {
+            switch self {
+            case .food: return false
+            default: return true
+            }
+        }
     }
 }

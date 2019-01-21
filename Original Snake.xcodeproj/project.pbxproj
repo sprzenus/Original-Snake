@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A03F3EB21F3673400023C65 /* OriginalSnakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F3EA21F3673400023C65 /* OriginalSnakeTests.swift */; };
 		8A03F3F321F3696800023C65 /* SnakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F3F221F3696800023C65 /* SnakeTests.swift */; };
+		8A03F3F721F5C7FB00023C65 /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F3F621F5C7FB00023C65 /* GameTests.swift */; };
 		8A98B56021CE889E00BB7CBF /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98B55F21CE889E00BB7CBF /* TriangleView.swift */; };
 		8A98B56721CEA00300BB7CBF /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98B56621CEA00300BB7CBF /* UserDefaultsExtension.swift */; };
 		8A98B56921CEA05500BB7CBF /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98B56821CEA05500BB7CBF /* Score.swift */; };
@@ -42,9 +42,9 @@
 
 /* Begin PBXFileReference section */
 		8A03F3E821F3673400023C65 /* OriginalSnakeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OriginalSnakeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A03F3EA21F3673400023C65 /* OriginalSnakeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalSnakeTests.swift; sourceTree = "<group>"; };
 		8A03F3EC21F3673400023C65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A03F3F221F3696800023C65 /* SnakeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeTests.swift; sourceTree = "<group>"; };
+		8A03F3F621F5C7FB00023C65 /* GameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
 		8A98B55F21CE889E00BB7CBF /* TriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
 		8A98B56621CEA00300BB7CBF /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		8A98B56821CEA05500BB7CBF /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		8A03F3E921F3673400023C65 /* OriginalSnakeTests */ = {
 			isa = PBXGroup;
 			children = (
-				8A03F3EA21F3673400023C65 /* OriginalSnakeTests.swift */,
+				8A03F3F621F5C7FB00023C65 /* GameTests.swift */,
 				8A03F3F221F3696800023C65 /* SnakeTests.swift */,
 				8A03F3EC21F3673400023C65 /* Info.plist */,
 			);
@@ -299,7 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A03F3F321F3696800023C65 /* SnakeTests.swift in Sources */,
-				8A03F3EB21F3673400023C65 /* OriginalSnakeTests.swift in Sources */,
+				8A03F3F721F5C7FB00023C65 /* GameTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

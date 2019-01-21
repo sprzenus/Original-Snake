@@ -49,11 +49,14 @@ class Snake {
     }
     
     func move() {
-        let newPoint = Point(x: head.x + moveDirection.point.x, y: head.y + moveDirection.point.y)
-        game?.checkCollision(newPoint)
-        body.enqueue(newPoint)
-        if (body.count > length) {
-            _=body.dequeue()
+        let newPoint = head + moveDirection.point
+        let collisionType = game?.checkCollision(newPoint)
+        game?.manageCollision(collisionType)
+        if !(collisionType?.shouldStopTheGame ?? false) {
+            body.enqueue(newPoint)
+            if (body.count > length) {
+                _=body.dequeue()
+            }
         }
         canChangeMoveDirection = true
     }
