@@ -72,7 +72,9 @@ class GameViewController: UIViewController {
         if game.isPaused {
             game.resume()
         } else if game.isStopped {
-            startNewGame()
+            if game.gameOverTimer == nil {
+                startNewGame()
+            }
         } else {
             guard let touch = touches.first else { fatalError() }
             changeSnakeMoveDirectionBasedOn(touch)

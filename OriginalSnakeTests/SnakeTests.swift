@@ -81,7 +81,7 @@ class SnakeTests: XCTestCase {
         snake.moveDirection = .up
         snake.move()
         snake.move()
-        
+              
         XCTAssertEqual(snake.head, targetPosition, "Snake position after down-right-up misclick is wrong")
     }
 }
