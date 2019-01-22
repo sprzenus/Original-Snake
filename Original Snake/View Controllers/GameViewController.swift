@@ -69,12 +69,11 @@ class GameViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard Date().timeIntervalSince1970 > game.touchEventInvulnerabilityTimestamp else { return }
         if game.isPaused {
             game.resume()
         } else if game.isStopped {
-            if game.gameOverTimer == nil {
-                startNewGame()
-            }
+            startNewGame()
         } else {
             guard let touch = touches.first else { fatalError() }
             changeSnakeMoveDirectionBasedOn(touch)
@@ -82,6 +81,7 @@ class GameViewController: UIViewController {
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard Date().timeIntervalSince1970 > game.touchEventInvulnerabilityTimestamp else { return }
         if !game.isPaused && !game.isStopped {
             guard let touch = touches.first else { fatalError() }
             changeSnakeMoveDirectionBasedOn(touch)

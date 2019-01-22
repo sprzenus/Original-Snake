@@ -26,7 +26,7 @@ class Game {
     private(set) var isPaused = true
     private(set) var timer = Timer()
     private(set) var collisionPoint: Point?
-    private(set) var gameOverTimer: Timer? // to don't listen to touch events for a while when game is over
+    private(set) var touchEventInvulnerabilityTimestamp: TimeInterval = 0 // to don't listen to touch events for a while when game is over
     
     init(vc: GameViewController?) {
         self.vc = vc
@@ -45,6 +45,7 @@ class Game {
     }
     
     func pause() {
+        guard !isStopped else { return }
         isPaused = true
         timer.invalidate()
     }
@@ -56,9 +57,7 @@ class Game {
             UserDefaults.standard.scores.append(Score(timestamp: Int64(Date().timeIntervalSince1970), points: score))
         }
         collisionPoint = snake.nextHeadPosition
-        gameOverTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
-            self.gameOverTimer = nil
-        })
+        touchEventInvulnerabilityTimestamp = Date().timeIntervalSince1970 + 0.5
     }
     
     public func manageCollision(_ type: CollisionType?) {
